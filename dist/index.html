@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0d151a">
+  <meta name="description" content="Демонстрационный ИИ-помощник роста фермера: прозрачные рекомендации по продажам, ассортименту и клиентам.">
+  <title>Своё Родное — ИИ-помощник роста фермера</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script defer src="./app.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#today" aria-label="На главную">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 42 42" width="42" height="42" fill="none"><path d="M21 36V10m0 18C12 27 7 22 7 14c8 0 14 5 14 14Zm1-9c0-9 4-14 13-16 0 9-4 15-13 16ZM21 34c0-8 5-12 13-12-1 9-5 13-13 12Z" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span><strong>Своё Родное</strong><small>Помощник роста фермера</small></span>
+      </a>
+      <div class="sidebar-label">РАБОЧЕЕ ПРОСТРАНСТВО</div>
+      <nav id="navigation" class="nav" aria-label="Главное меню">
+        <button class="nav-link active" data-view="today"><span class="nav-icon">◫</span>Сегодня<span class="nav-count">3</span></button>
+        <button class="nav-link" data-view="products"><span class="nav-icon">▤</span>Мои товары</button>
+        <button class="nav-link" data-view="sales"><span class="nav-icon">▥</span>Продажи</button>
+        <button class="nav-link" data-view="customers"><span class="nav-icon">♧</span>Покупатели</button>
+        <button class="nav-link" data-view="method"><span class="nav-icon">◇</span>Как это работает</button>
+        <button class="nav-link" data-view="history"><span class="nav-icon">◷</span>История решений</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="demo-notice"><span class="demo-dot"></span><div><strong>Деморежим</strong><small>Обезличенные тестовые данные. Реальные изменения не выполняются.</small></div></div>
+        <button id="resetDemo" class="subtle-btn">↻ Сбросить демо</button>
+      </div>
+    </aside>
+    <div class="mobile-top"><span>🌿 Своё Родное</span><button id="mobileMenuButton" aria-label="Открыть меню">☰</button></div>
+    <main class="main">
+      <header class="topbar"><div class="breadcrumb" id="breadcrumb">Обзор / Сегодня</div><div class="topbar-actions"><span class="live-pill"><span></span> Данные обновлены</span><button id="exportData" class="top-btn" title="Экспортировать обезличенный отчёт">⇩ <span>Скачать отчёт</span></button><div class="avatar" title="Тестовый профиль">А</div></div></header>
+      <section id="view-today" class="view active" aria-label="Главная панель"></section>
+      <section id="view-products" class="view" aria-label="Товары"></section>
+      <section id="view-sales" class="view" aria-label="Продажи"></section>
+      <section id="view-customers" class="view" aria-label="Покупатели"></section>
+      <section id="view-method" class="view" aria-label="Методология"></section>
+      <section id="view-history" class="view" aria-label="История"></section>
+      <footer class="site-footer">Концепт для кейса РСХБ.Цифра · «Своё Родное» · 2026 · Все данные и показатели — демонстрационные</footer>
+    </main>
+  </div>
+  <div id="modalOverlay" class="modal-overlay" hidden>
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button id="modalClose" class="modal-close" aria-label="Закрыть">✕</button>
+      <div id="modalContent"></div>
+    </section>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
